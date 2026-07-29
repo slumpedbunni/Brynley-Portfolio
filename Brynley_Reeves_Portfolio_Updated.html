@@ -77,6 +77,11 @@
     .hero-title { font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: .96; margin: 18px 0 24px; }
     .hero-subtitle { font-size: 1.15rem; max-width: 720px; margin: 0 auto; line-height: 1.8; color: var(--muted); }
     .hero-actions { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero-note { margin-top: 18px; font-size: .88rem; color: var(--moss); letter-spacing: .04em; }
+    .project-card .w3-container { position: relative; }
+    .project-card .w3-container::before { content: ''; position: absolute; top: 0; left: 24px; width: 52px; height: 4px; background: var(--clay); border-radius: 999px; }
+    .timeline-item p { max-width: 850px; }
+    .section-shell:hover { box-shadow: 0 22px 60px rgba(23,63,53,.14); }
 
     .btn-primary, .btn-secondary { border-radius: 999px; padding: 14px 22px !important; font-weight: 700; transition: .2s ease; }
     .btn-primary { background: var(--pine) !important; color: white !important; }
@@ -162,6 +167,7 @@
         <i class="fa fa-download"></i> Download Resume
       </a>
       <a href="#portfolio" class="w3-button btn-secondary w3-margin-top">View Projects</a>
+      <p class="hero-note">Based in Denver • Open to environmental science, GIS, restoration, and water-resource roles</p>
     </header>
 
     <section class="w3-padding-32 w3-content" id="portfolio">
@@ -175,7 +181,7 @@
             <img src="assets/BluemesaReservoir.jpg" alt="Map or figure from the Colorado reservoir storage modeling project">
             <div class="w3-container w3-padding-24">
               <h3>Colorado Reservoir Storage Modeling</h3>
-              <p class="w3-small w3-text-grey">ESIIL STARS Research Internship • CU Boulder • 2026</p>
+              <p class="w3-small w3-text-grey">ESIIL STARS Research Internship • University of Colorado Boulder • Summer 2026</p>
               <p>Developed and evaluated regression models in Python to examine how streamflow, antecedent storage, snowpack, and climate variables influence reservoir storage across Colorado. I built reproducible workflows, compared model performance, created maps and figures, and helped communicate the results through a final research presentation.</p>
               <span class="tag">Python</span><span class="tag">GIS</span><span class="tag">Hydrologic Modeling</span><span class="tag">Statistical Analysis</span>
             </div>
@@ -228,7 +234,7 @@
 
       <div class="timeline-item">
         <h3>ESIIL STARS Research Intern</h3>
-        <p class="w3-text-grey"><b>Environmental Data Science Institute for Innovation and Inclusion, CU Boulder</b> • May 2026–Present</p>
+        <p class="w3-text-grey"><b>Environmental Data Science Innovation &amp; Inclusion Lab (ESIIL), University of Colorado Boulder</b> • May 2026–July 2026</p>
         <p>Collaborated with an interdisciplinary research team to analyze hydrologic and environmental datasets and investigate factors influencing reservoir storage across Colorado. I used Python, GIS, and statistical methods to integrate streamflow, storage, snowpack, and climate data, evaluate regression models, create visualizations, and present findings to researchers and peers.</p>
       </div>
 
@@ -240,7 +246,7 @@
 
       <div class="timeline-item">
         <h3>Barista</h3>
-        <p class="w3-text-grey"><b>Starbucks</b> • August 2024–Present</p>
+        <p class="w3-text-grey"><b>Starbucks</b> • August 2024–July 2026</p>
         <p>Balance speed, accuracy, teamwork, and customer service in a high-volume environment. Working while completing an accelerated degree path sharpened my time management, adaptability, and ability to stay calm when approximately everything is happening at once.</p>
       </div>
 
@@ -306,7 +312,7 @@
     <section class="w3-padding-32 w3-content w3-text-grey section-shell" id="contact" style="margin-bottom:64px">
       <h2 class="section-title">Let’s Connect</h2>
       <hr class="soft-rule">
-      <p>I am interested in environmental science, GIS, conservation, restoration, water resources, and research opportunities where I can contribute strong analysis, thoughtful communication, and a genuine willingness to learn.</p>
+      <p>I am interested in environmental science, GIS, conservation, restoration, water resources, and research roles where I can contribute strong analysis, thoughtful communication, and the kind of follow-through that keeps projects moving.</p>
 
       <div class="w3-section">
         <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right accent"></i> Denver, Colorado</p>
@@ -325,7 +331,7 @@
 
     <footer class="w3-container w3-padding-48 cream-bg w3-center" style="margin:-24px">
       <p><b>Brynley Reeves</b> • Environmental Science Portfolio</p>
-      <p class="w3-small">GIS, research, restoration, and an unreasonable willingness to stare at environmental data until it makes sense.</p>
+      <p class="w3-small">GIS, hydrology, restoration, and an unreasonable willingness to stare at environmental data until it finally behaves.</p>
       <a class="footer-link contact-link" href="#home">Back to top</a>
       <a class="footer-link contact-link" href="mailto:reevesbrynley31@gmail.com">Email</a>
       <a class="footer-link contact-link" href="Brynley_Reeves_Resume.docx" download>Resume</a>
