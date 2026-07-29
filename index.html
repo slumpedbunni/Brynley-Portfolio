@@ -66,8 +66,8 @@
     .script {
       font-family: "Caveat", cursive;
       color: var(--clay);
-      font-size: clamp(1.35rem, 2vw, 1.7rem);
-      transform: rotate(-2deg);
+      font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+      transform: rotate(-1deg);
       display: inline-block;
     }
 
@@ -161,7 +161,7 @@
     }
 
     .hero-image::before {
-      content: "39.7392° N  •  104.9903° W";
+      content: "Denver, Colorado";
       position: absolute;
       left: clamp(24px, 4vw, 64px);
       bottom: clamp(16px, 2.4vw, 34px);
@@ -311,17 +311,6 @@
       transform: rotate(-3deg);
     }
 
-    .photo-stack::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 34px;
-      top: 6px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-2deg);
-      background: rgba(231,214,174,.68);
-      box-shadow: 0 3px 12px rgba(0,0,0,.06);
-    }
 
     .photo-stack img {
       position: relative;
@@ -346,17 +335,14 @@
     }
 
     .field-note-card::before {
-      content: "FIELD NOTE";
+      content: "";
       position: absolute;
-      top: -13px;
-      left: 22px;
-      padding: 5px 11px;
+      top: 20px;
+      left: 0;
+      width: 5px;
+      height: 48px;
       background: var(--gold);
-      color: var(--forest);
-      border-radius: 999px;
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
+      border-radius: 0 999px 999px 0;
     }
 
     .stats {
@@ -544,8 +530,18 @@
     }
 
     .skill-icon {
-      font-size: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
       margin-bottom: 18px;
+      border-radius: 50%;
+      background: var(--river-soft);
+      color: var(--forest);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
     }
 
     .skill-list {
@@ -702,9 +698,9 @@
       <div class="hero-image" role="img" aria-label="Brynley Reeves standing in a stream during fieldwork"></div>
 
       <div class="hero-copy">
-        <span class="script">maps, models, muddy boots</span>
+        <span class="script">science, place, and practical problem-solving</span>
         <p class="eyebrow">Environmental scientist • GIS • Hydrology • Restoration</p>
-        <h1 class="hero-title">I like figuring out how landscapes work.</h1>
+        <h1 class="hero-title">I like figuring out how environmental systems work.</h1>
         <p class="hero-lede">
           Whether I am building predictive models for Colorado reservoirs, mapping restoration projects with GIS,
           or spending the day knee-deep in a stream collecting data, I like turning good science into something people can actually use.
@@ -723,9 +719,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="script">field notes</span>
+            <span class="script">a little about me</span>
             <p class="eyebrow">About me</p>
-            <h2>Science feels most meaningful when it has a place attached to it.</h2>
+            <h2>I care most about work that connects science to real places.</h2>
           </div>
           <p class="section-intro">
             A watershed, a prairie, a wetland, a neighborhood. I am most interested in work where data can be connected back to a real landscape and the people depending on it.
@@ -776,12 +772,12 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="script">selected work</span>
+            <span class="script">selected projects</span>
             <p class="eyebrow">Projects</p>
-            <h2>Research, restoration, and environmental data with a point.</h2>
+            <h2>Research, restoration, and environmental data that lead somewhere useful.</h2>
           </div>
           <p class="section-intro">
-            Equal parts analysis, curiosity, and staring at a map until it tells me what is wrong.
+            A mix of analysis, curiosity, and figuring out what the data is actually saying.
           </p>
         </div>
 
@@ -873,9 +869,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="script">where I have been</span>
+            <span class="script">experience</span>
             <p class="eyebrow">Experience</p>
-            <h2>A timeline of research, fieldwork, leadership, and learning quickly.</h2>
+            <h2>Research, fieldwork, leadership, and the skills built along the way.</h2>
           </div>
         </div>
 
@@ -931,15 +927,15 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="script">toolbox</span>
+            <span class="script">skills</span>
             <p class="eyebrow">Skills</p>
-            <h2>The technical stuff, grouped like a sane person.</h2>
+            <h2>Technical skills, grouped by how I actually use them.</h2>
           </div>
         </div>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-icon">🗺️</div>
+            <div class="skill-icon">01</div>
             <h3>GIS and Mapping</h3>
             <ul class="skill-list">
               <li>ArcGIS Pro</li>
@@ -951,7 +947,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">🐍</div>
+            <div class="skill-icon">02</div>
             <h3>Programming and Data</h3>
             <ul class="skill-list">
               <li>Python</li>
@@ -963,7 +959,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">💧</div>
+            <div class="skill-icon">03</div>
             <h3>Field and Water</h3>
             <ul class="skill-list">
               <li>Water-quality concepts</li>
@@ -975,7 +971,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">🛰️</div>
+            <div class="skill-icon">04</div>
             <h3>Remote Sensing</h3>
             <ul class="skill-list">
               <li>Landsat imagery</li>
@@ -993,9 +989,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="script">a few places along the way</span>
+            <span class="script">gallery</span>
             <p class="eyebrow">Gallery</p>
-            <h2>The landscapes behind the spreadsheets.</h2>
+            <h2>A few of the places behind the work.</h2>
           </div>
         </div>
 
@@ -1012,7 +1008,7 @@
       <div class="container contact-grid">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about maps, water, restoration, or the project that needs someone willing to dig in.</h2>
+          <h2>Let’s talk about maps, water, restoration, or the project you need help moving forward.</h2>
           <p>
             I am open to environmental science, GIS, restoration, field research, and water-resource opportunities.
           </p>
@@ -1029,8 +1025,8 @@
 
   <footer>
     <div class="container footer-row">
-      <span>Made with GIS, coffee, and probably too many browser tabs.<span class="dragonfly">✦</span></span>
-      <span>Denver, Colorado • Elevation 5,280 ft</span>
+      <span>Built with care in Denver, Colorado.</span>
+      <span>Denver, Colorado</span>
     </div>
   </footer>
 </body>
