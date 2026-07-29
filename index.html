@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Brynley Reeves, an environmental scientist working across GIS, hydrology, restoration, field research, and environmental data science.">
+  <title>Brynley Reeves | Environmental Scientist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest: #173f35;
+      --forest-2: #285d4e;
+      --river: #87aeb8;
+      --river-soft: #dfecef;
+      --sage: #a8bba8;
+      --sage-soft: #eef4ef;
+      --sand: #f4eee3;
+      --paper: #fffdf8;
+      --clay: #c77855;
+      --gold: #d3aa58;
+      --ink: #24332d;
+      --muted: #68776f;
+      --line: rgba(23, 63, 53, .12);
+      --shadow: 0 22px 60px rgba(23, 63, 53, .13);
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.84)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%2399afa0' stroke-opacity='.18'%3E%3Cpath d='M-10 25 C25 5, 55 45, 95 20 S160 25, 195 8'/%3E%3Cpath d='M-20 70 C20 45, 55 95, 105 62 S165 72, 200 55'/%3E%3Cpath d='M-5 118 C30 94, 65 140, 115 108 S165 122, 195 100'/%3E%3Cpath d='M-15 160 C25 140, 55 178, 100 151 S165 160, 195 145'/%3E%3C/g%3E%3C/svg%3E");
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--clay);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .script {
+      font-family: "Caveat", cursive;
+      color: var(--clay);
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      transform: rotate(-2deg);
+      display: inline-block;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: var(--forest);
+      font-family: "Fraunces", serif;
+      line-height: 1.05;
+    }
+
+    h1 { font-size: clamp(3.8rem, 8vw, 7.4rem); }
+    h2 { font-size: clamp(2.6rem, 5vw, 4.7rem); }
+    h3 { font-size: 1.7rem; }
+
+    p { margin-top: 0; }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      padding: 16px 0;
+      background: linear-gradient(to bottom, rgba(255,253,248,.95), rgba(255,253,248,.72), transparent);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Fraunces", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -5px;
+      height: 2px;
+      background: var(--clay);
+      transition: right .2s ease;
+    }
+
+    .nav-links a:hover::after { right: 0; }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(430px, .85fr);
+      background: var(--paper);
+    }
+
+    .hero-image {
+      min-height: 100vh;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(20,46,39,.05), rgba(20,46,39,.45)),
+        url("assets/hero.jpeg") center 34% / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-image::after {
+      content: "Brynley Reeves";
+      position: absolute;
+      left: clamp(24px, 4vw, 64px);
+      bottom: clamp(28px, 5vw, 66px);
+      color: white;
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 3.2vw, 4rem);
+      text-shadow: 0 6px 28px rgba(0,0,0,.35);
+    }
+
+    .hero-image::before {
+      content: "39.7392° N  •  104.9903° W";
+      position: absolute;
+      left: clamp(24px, 4vw, 64px);
+      bottom: clamp(16px, 2.4vw, 34px);
+      color: rgba(255,255,255,.84);
+      font-size: .76rem;
+      letter-spacing: .12em;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      padding: 130px clamp(34px, 5vw, 78px) 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before,
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero-copy::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(168,187,168,.22);
+      top: -100px;
+      right: -90px;
+    }
+
+    .hero-copy::after {
+      width: 230px;
+      height: 230px;
+      background: rgba(199,120,85,.10);
+      bottom: 30px;
+      left: -90px;
+    }
+
+    .hero-copy > * { position: relative; z-index: 1; }
+
+    .hero-title {
+      margin-bottom: 26px;
+      max-width: 700px;
+    }
+
+    .hero-lede {
+      font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+      color: var(--muted);
+      max-width: 690px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(23,63,53,.14);
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--forest);
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--forest);
+      border-color: var(--line);
+    }
+
+    .availability {
+      margin-top: 22px;
+      font-size: .86rem;
+      color: var(--forest-2);
+    }
+
+    .availability span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: #71a46f;
+      box-shadow: 0 0 0 5px rgba(113,164,111,.12);
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    .field-notes {
+      background: linear-gradient(180deg, rgba(244,238,227,.75), rgba(255,253,248,.8));
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .photo-stack {
+      position: relative;
+      padding: 26px;
+    }
+
+    .photo-stack::before {
+      content: "";
+      position: absolute;
+      inset: 10px 18px 34px 4px;
+      border-radius: 28px;
+      background: var(--river-soft);
+      transform: rotate(-3deg);
+    }
+
+    .photo-stack::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 34px;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      background: rgba(231,214,174,.68);
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+
+    .photo-stack img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.5deg);
+    }
+
+    .field-note-card {
+      margin-top: 26px;
+      padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: 0 14px 34px rgba(23,63,53,.08);
+      position: relative;
+    }
+
+    .field-note-card::before {
+      content: "FIELD NOTE";
+      position: absolute;
+      top: -13px;
+      left: 22px;
+      padding: 5px 11px;
+      background: var(--gold);
+      color: var(--forest);
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.62);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--forest);
+      font-size: 1.2rem;
+    }
+
+    .projects {
+      background: var(--paper);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 34px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      min-height: 500px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .project:nth-child(even) {
+      grid-template-columns: .85fr 1.15fr;
+    }
+
+    .project:nth-child(even) .project-image { order: 2; }
+    .project:nth-child(even) .project-copy { order: 1; }
+
+    .project-image {
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.025);
+    }
+
+    .project-copy {
+      padding: clamp(32px, 5vw, 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-number {
+      color: var(--clay);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--sage-soft);
+      color: var(--forest);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .experience {
+      background: linear-gradient(180deg, rgba(223,236,239,.46), rgba(255,255,255,.8));
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 130px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(var(--river), var(--sage));
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 60px;
+      position: relative;
+      padding: 0 0 46px;
+    }
+
+    .timeline-year {
+      color: var(--clay);
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-align: right;
+      padding-top: 5px;
+    }
+
+    .timeline-card {
+      position: relative;
+      padding: 26px 28px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 30px rgba(23,63,53,.07);
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: -68px;
+      top: 29px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--clay);
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px var(--clay);
+    }
+
+    .timeline-meta {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .skills {
+      background: var(--paper);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 26px;
+      min-height: 220px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 12px 30px rgba(23,63,53,.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(23,63,53,.11);
+    }
+
+    .skill-icon {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .skill-list {
+      color: var(--muted);
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .gallery {
+      background: linear-gradient(180deg, rgba(244,238,227,.65), rgba(255,253,248,.9));
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .8fr .9fr;
+      grid-template-rows: 240px 240px;
+      gap: 14px;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(23,63,53,.08);
+    }
+
+    .gallery-grid figure:first-child { grid-row: 1 / span 2; }
+    .gallery-grid figure:nth-child(4) { grid-column: 2 / span 2; }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-grid figure:hover img { transform: scale(1.03); }
+
+    .contact {
+      background: var(--forest);
+      color: rgba(255,255,255,.82);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "✦";
+      position: absolute;
+      right: 8%;
+      top: 8%;
+      font-size: 9rem;
+      color: rgba(255,255,255,.05);
+    }
+
+    .contact h2 { color: white; }
+    .contact .eyebrow { color: #efb58f; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      justify-items: start;
+    }
+
+    .contact-links a {
+      color: white;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255,255,255,.24);
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #102f28;
+      color: rgba(255,255,255,.68);
+      font-size: .86rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .dragonfly {
+      display: inline-block;
+      transform: rotate(-8deg);
+      margin-left: 6px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 72vh; }
+      .hero-copy { padding-top: 90px; }
+      .section-head,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .section-intro { margin-left: 0; }
+      .project,
+      .project:nth-child(even) { grid-template-columns: 1fr; }
+      .project:nth-child(even) .project-image,
+      .project:nth-child(even) .project-copy { order: initial; }
+      .project-image img { min-height: 360px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 220px 220px; }
+      .gallery-grid figure:first-child { grid-row: 1 / span 2; }
+      .gallery-grid figure:nth-child(4) { grid-column: 1 / span 2; }
+    }
+
+    @media (max-width: 700px) {
+      .site-header { position: absolute; }
+      .nav-links { display: none; }
+      .hero-image { min-height: 70vh; }
+      .hero-copy { padding: 72px 24px 58px; }
+      .section { padding: 82px 0; }
+      .about-grid { gap: 34px; }
+      .stats { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .timeline::before { left: 11px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; padding-left: 42px; }
+      .timeline-year { text-align: left; }
+      .timeline-card::before { left: -38px; }
+      .gallery-grid { display: grid; grid-template-columns: 1fr; grid-template-rows: repeat(4, 260px); }
+      .gallery-grid figure,
+      .gallery-grid figure:first-child,
+      .gallery-grid figure:nth-child(4) { grid-column: auto; grid-row: auto; }
+      .footer-row { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Brynley Reeves</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">Field Notes</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-image" role="img" aria-label="Brynley Reeves standing in a stream during fieldwork"></div>
+
+      <div class="hero-copy">
+        <span class="script">maps, models, muddy boots</span>
+        <p class="eyebrow">Environmental scientist • GIS • Hydrology • Restoration</p>
+        <h1 class="hero-title">I like figuring out how landscapes work.</h1>
+        <p class="hero-lede">
+          Whether I am building predictive models for Colorado reservoirs, mapping restoration projects with GIS,
+          or spending the day knee-deep in a stream collecting data, I like turning good science into something people can actually use.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View Projects</a>
+          <a class="button button-secondary" href="assets/Brynley_Reeves_Resume.docx" download="Brynley_Reeves_Resume.docx">Download Resume</a>
+        </div>
+
+        <p class="availability"><span></span>Based in Denver and open to environmental science, GIS, restoration, and water-resource roles.</p>
+      </div>
+    </section>
+
+    <section class="section field-notes" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="script">field notes</span>
+            <p class="eyebrow">About me</p>
+            <h2>Science feels most meaningful when it has a place attached to it.</h2>
+          </div>
+          <p class="section-intro">
+            A watershed, a prairie, a wetland, a neighborhood. I am most interested in work where data can be connected back to a real landscape and the people depending on it.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="photo-stack">
+            <img src="assets/brynley.jpeg" alt="Portrait of Brynley Reeves">
+          </div>
+
+          <div>
+            <p>
+              I earned my Associate of Science in General Science while I was still in high school, then completed my Bachelor of Science in Environmental Science at nineteen.
+              Along the way, I built experience in GIS, Python, remote sensing, field sampling, hydrology, ecological restoration, and science communication.
+            </p>
+            <p>
+              I am especially drawn to conservation, restoration ecology, water resources, environmental justice, and research that can support better decisions.
+              I bring curiosity, reliable follow-through, and the ability to explain technical work without making people feel like they need a dictionary.
+            </p>
+
+            <div class="field-note-card">
+              <p style="margin:0">
+                My favorite work usually involves some combination of maps, field gear, a messy dataset, and the moment when the pattern finally makes sense.
+              </p>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>B.S.</strong>
+                Environmental Science
+              </div>
+              <div class="stat">
+                <strong>A.S.</strong>
+                General Science
+              </div>
+              <div class="stat">
+                <strong>Denver</strong>
+                Colorado
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="script">selected work</span>
+            <p class="eyebrow">Projects</p>
+            <h2>Research, restoration, and environmental data with a point.</h2>
+          </div>
+          <p class="section-intro">
+            Equal parts analysis, curiosity, and staring at a map until it tells me what is wrong.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="project-image">
+              <img src="assets/BluemesaReservoir.jpg" alt="Blue Mesa Reservoir in Colorado">
+            </div>
+            <div class="project-copy">
+              <span class="project-number">PROJECT 01</span>
+              <h3>Colorado Reservoir Storage Modeling</h3>
+              <p>
+                Collaborated with an interdisciplinary research team through ESIIL STARS to model reservoir storage using streamflow, snowpack, temperature, and antecedent storage.
+                Built and evaluated regression models, created maps and visualizations, and translated model performance into clear evidence for a nontechnical audience.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Hydrology</span>
+                <span class="tag">Regression</span>
+                <span class="tag">GIS</span>
+                <span class="tag">Science Communication</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-image">
+              <img src="assets/wetland.jpg" alt="Wetland restoration landscape">
+            </div>
+            <div class="project-copy">
+              <span class="project-number">PROJECT 02</span>
+              <h3>Wetland and Water Quality Research</h3>
+              <p>
+                Explored how constructed wetlands and phytoremediation can improve water quality, reduce pollutant loads, and support environmental justice goals.
+                Connected ecological mechanisms with practical restoration recommendations and community outcomes.
+              </p>
+              <div class="tags">
+                <span class="tag">Restoration Ecology</span>
+                <span class="tag">Water Quality</span>
+                <span class="tag">Phytoremediation</span>
+                <span class="tag">Environmental Justice</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-image">
+              <img src="assets/bison-daniels.jpg" alt="Bison and prairie habitat at Daniels Park">
+            </div>
+            <div class="project-copy">
+              <span class="project-number">PROJECT 03</span>
+              <h3>Landscape Ecology and Restoration Planning</h3>
+              <p>
+                Used GIS, land-cover analysis, remote sensing, and ecological context to examine habitat connectivity, urban expansion, and restoration opportunities across Colorado landscapes.
+                Focused on making spatial analysis useful for conservation and planning.
+              </p>
+              <div class="tags">
+                <span class="tag">ArcGIS Pro</span>
+                <span class="tag">Remote Sensing</span>
+                <span class="tag">NDVI</span>
+                <span class="tag">Landscape Ecology</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-image">
+              <img src="assets/consumption-literacy.avif" alt="Community sustainability and garden work">
+            </div>
+            <div class="project-copy">
+              <span class="project-number">PROJECT 04</span>
+              <h3>Community Sustainability and Environmental Education</h3>
+              <p>
+                Supported community-centered sustainability work through the Consumption Literacy Project, including garden-based learning and environmental education.
+                Helped connect environmental ideas with everyday choices, local food systems, and accessible public engagement.
+              </p>
+              <div class="tags">
+                <span class="tag">Community Engagement</span>
+                <span class="tag">Environmental Education</span>
+                <span class="tag">Sustainability</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="script">where I have been</span>
+            <p class="eyebrow">Experience</p>
+            <h2>A timeline of research, fieldwork, leadership, and learning quickly.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">MAY 2026<br>JULY 2026</div>
+            <div class="timeline-card">
+              <h3>ESIIL STARS Research Intern</h3>
+              <div class="timeline-meta">Environmental Data Science Innovation &amp; Inclusion Lab, University of Colorado Boulder</div>
+              <p>
+                Worked on a collaborative Colorado hydrology project focused on reservoir storage, streamflow, snowpack, climate variables, regression modeling, and science communication.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2025<br>PRESENT</div>
+            <div class="timeline-card">
+              <h3>Volunteer and Environmental Education Experience</h3>
+              <div class="timeline-meta">Denver-area conservation and community organizations</div>
+              <p>
+                Contributed to public-facing environmental work through community gardens, education, restoration, and conservation-focused volunteering.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">AUG 2024<br>JULY 2026</div>
+            <div class="timeline-card">
+              <h3>Barista</h3>
+              <div class="timeline-meta">Starbucks Coffee Company, Denver</div>
+              <p>
+                Built strong communication, training, leadership, and problem-solving skills in a fast-paced customer-facing environment while completing college and research work.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-card">
+              <h3>Bachelor of Science in Environmental Science</h3>
+              <div class="timeline-meta">Metropolitan State University of Denver</div>
+              <p>
+                Coursework and projects included GIS, remote sensing, restoration ecology, hydrology, environmental justice, field methods, chemistry, and science communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="script">toolbox</span>
+            <p class="eyebrow">Skills</p>
+            <h2>The technical stuff, grouped like a sane person.</h2>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🗺️</div>
+            <h3>GIS and Mapping</h3>
+            <ul class="skill-list">
+              <li>ArcGIS Pro</li>
+              <li>ArcGIS Online</li>
+              <li>Spatial analysis</li>
+              <li>StoryMaps</li>
+              <li>Cartography</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Programming and Data</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>Regression modeling</li>
+              <li>Data cleaning</li>
+              <li>Visualization</li>
+              <li>Statistical interpretation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">💧</div>
+            <h3>Field and Water</h3>
+            <ul class="skill-list">
+              <li>Water-quality concepts</li>
+              <li>Field sampling</li>
+              <li>Hydrologic data</li>
+              <li>Ecological monitoring</li>
+              <li>GPS and site documentation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🛰️</div>
+            <h3>Remote Sensing</h3>
+            <ul class="skill-list">
+              <li>Landsat imagery</li>
+              <li>NDVI</li>
+              <li>Google Earth Engine</li>
+              <li>Time-series analysis</li>
+              <li>Land-cover interpretation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" aria-label="Environmental work gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="script">a few places along the way</span>
+            <p class="eyebrow">Gallery</p>
+            <h2>The landscapes behind the spreadsheets.</h2>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure><img src="assets/hero.jpeg" alt="Brynley doing stream fieldwork"></figure>
+          <figure><img src="assets/BluemesaReservoir.jpg" alt="Blue Mesa Reservoir"></figure>
+          <figure><img src="assets/wetland.jpg" alt="Wetland landscape"></figure>
+          <figure><img src="assets/bison-daniels.jpg" alt="Bison in prairie habitat"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about maps, water, restoration, or the project that needs someone willing to dig in.</h2>
+          <p>
+            I am open to environmental science, GIS, restoration, field research, and water-resource opportunities.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:brynleyreeves@gmail.com">brynleyreeves@gmail.com</a>
+          <a href="https://github.com/slumpedbunni" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="assets/Brynley_Reeves_Resume.docx" download="Brynley_Reeves_Resume.docx">Download Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>Made with GIS, coffee, and probably too many browser tabs.<span class="dragonfly">✦</span></span>
+      <span>Denver, Colorado • Elevation 5,280 ft</span>
+    </div>
+  </footer>
+</body>
+</html>
