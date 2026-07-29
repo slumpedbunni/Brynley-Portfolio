@@ -14,14 +14,18 @@
     :root {
       --forest: #173f35;
       --forest-2: #285d4e;
-      --river: #87aeb8;
-      --river-soft: #dfecef;
-      --sage: #a8bba8;
-      --sage-soft: #eef4ef;
+      --river: #6e9eac;
+      --river-soft: #dceff4;
+      --sage: #a8c2a5;
+      --sage-soft: #edf6eb;
       --sand: #f4eee3;
       --paper: #fffdf8;
-      --clay: #c77855;
-      --gold: #d3aa58;
+      --clay: #cf765f;
+      --gold: #d7ad4b;
+      --lavender: #aa9dca;
+      --coral-soft: #f5e5e0;
+      --yellow-soft: #f8edc9;
+      --lavender-soft: #eeeaf5;
       --ink: #24332d;
       --muted: #68776f;
       --line: rgba(23, 63, 53, .12);
@@ -66,7 +70,7 @@
     .script {
       font-family: "Caveat", cursive;
       color: var(--clay);
-      font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+      font-size: clamp(1.05rem, 1.4vw, 1.3rem);
       transform: rotate(-1deg);
       display: inline-block;
     }
@@ -439,6 +443,91 @@
       font-weight: 700;
     }
 
+
+    .project[data-accent="blue"] { --project-accent: var(--river); --project-soft: var(--river-soft); }
+    .project[data-accent="teal"] { --project-accent: #66a79b; --project-soft: #e0f1ed; }
+    .project[data-accent="gold"] { --project-accent: var(--gold); --project-soft: var(--yellow-soft); }
+    .project[data-accent="coral"] { --project-accent: var(--clay); --project-soft: var(--coral-soft); }
+
+    .project {
+      border-top: 5px solid var(--project-accent, var(--river));
+    }
+
+    .project .tag {
+      background: var(--project-soft, var(--sage-soft));
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 14px;
+      border: 1px solid color-mix(in srgb, var(--project-accent) 45%, transparent);
+      border-radius: 999px;
+      color: var(--forest);
+      background: color-mix(in srgb, var(--project-soft) 82%, white);
+      font-size: .82rem;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(23,63,53,.10);
+    }
+
+    .project-note {
+      margin-top: 24px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--project-soft, var(--sage-soft));
+      color: var(--forest);
+      font-size: .88rem;
+    }
+
+    .project-note strong {
+      font-weight: 800;
+    }
+
+    .outside {
+      background: linear-gradient(180deg, rgba(238,233,248,.70), rgba(255,253,248,.94));
+    }
+
+    .outside-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(30px, 5vw, 58px);
+      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .outside-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .outside-item {
+      padding: 17px 18px;
+      border-radius: 18px;
+      background: var(--lavender-soft);
+      font-size: .96rem;
+    }
+
+    @media (max-width: 700px) {
+      .outside-list { grid-template-columns: 1fr; }
+    }
+
     .experience {
       background: linear-gradient(180deg, rgba(223,236,239,.46), rgba(255,255,255,.8));
     }
@@ -533,15 +622,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       margin-bottom: 18px;
-      border-radius: 50%;
-      background: var(--river-soft);
-      color: var(--forest);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .08em;
+      border-radius: 16px;
+      background: var(--lavender-soft);
+      font-size: 1.45rem;
+      transition: transform .2s ease;
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: rotate(-3deg) scale(1.04);
     }
 
     .skill-list {
@@ -698,12 +789,12 @@
       <div class="hero-image" role="img" aria-label="Brynley Reeves standing in a stream during fieldwork"></div>
 
       <div class="hero-copy">
-        <span class="script">science, place, and practical problem-solving</span>
+        <span class="script">environmental science, GIS, and practical problem-solving</span>
         <p class="eyebrow">Environmental scientist • GIS • Hydrology • Restoration</p>
-        <h1 class="hero-title">I like figuring out how environmental systems work.</h1>
+        <h1 class="hero-title">I like solving environmental problems, especially when there is a map involved.</h1>
         <p class="hero-lede">
-          Whether I am building predictive models for Colorado reservoirs, mapping restoration projects with GIS,
-          or spending the day knee-deep in a stream collecting data, I like turning good science into something people can actually use.
+          I work with GIS, hydrology, restoration, and field data, often with a spreadsheet that needs a little negotiation.
+          Mostly, I like taking environmental information and turning it into something clear, useful, and grounded in a real place.
         </p>
 
         <div class="hero-actions">
@@ -721,10 +812,10 @@
           <div>
             <span class="script">a little about me</span>
             <p class="eyebrow">About me</p>
-            <h2>I care most about work that connects science to real places.</h2>
+            <h2>Hi, I’m Brynley. I ask a lot of questions, which has worked out pretty well because that is basically research.</h2>
           </div>
           <p class="section-intro">
-            A watershed, a prairie, a wetland, a neighborhood. I am most interested in work where data can be connected back to a real landscape and the people depending on it.
+            I am most interested in work where data connects back to an actual place, whether that is a watershed, a wetland, a prairie, or a neighborhood.
           </p>
         </div>
 
@@ -736,16 +827,16 @@
           <div>
             <p>
               I earned my Associate of Science in General Science while I was still in high school, then completed my Bachelor of Science in Environmental Science at nineteen.
-              Along the way, I built experience in GIS, Python, remote sensing, field sampling, hydrology, ecological restoration, and science communication.
+              It still sounds a little strange when I say it out loud, but it is true.
             </p>
             <p>
-              I am especially drawn to conservation, restoration ecology, water resources, environmental justice, and research that can support better decisions.
-              I bring curiosity, reliable follow-through, and the ability to explain technical work without making people feel like they need a dictionary.
+              I am especially interested in conservation, restoration ecology, water resources, environmental justice, and research that supports better decisions.
+              I learn quickly, notice when something looks off, and explain technical work without making people wish they had never asked.
             </p>
 
             <div class="field-note-card">
               <p style="margin:0">
-                My favorite work usually involves some combination of maps, field gear, a messy dataset, and the moment when the pattern finally makes sense.
+                My favorite projects usually involve a map, a messy dataset, and at least one moment where the pattern finally makes sense.
               </p>
             </div>
 
@@ -774,15 +865,15 @@
           <div>
             <span class="script">selected projects</span>
             <p class="eyebrow">Projects</p>
-            <h2>Research, restoration, and environmental data that lead somewhere useful.</h2>
+            <h2>Selected projects.</h2>
           </div>
           <p class="section-intro">
-            A mix of analysis, curiosity, and figuring out what the data is actually saying.
+            Most of these involved a lot of tabs, a few revisions, and eventually a result worth sharing.
           </p>
         </div>
 
         <div class="project-list">
-          <article class="project">
+          <article class="project" data-accent="blue">
             <div class="project-image">
               <img src="assets/BluemesaReservoir.jpg" alt="Blue Mesa Reservoir in Colorado">
             </div>
@@ -800,10 +891,11 @@
                 <span class="tag">GIS</span>
                 <span class="tag">Science Communication</span>
               </div>
+              <div class="project-note"><strong>What stuck with me:</strong> reservoir behavior is rarely as simple as the first hypothesis.</div>
             </div>
           </article>
 
-          <article class="project">
+          <article class="project" data-accent="teal">
             <div class="project-image">
               <img src="assets/wetland.jpg" alt="Wetland restoration landscape">
             </div>
@@ -820,30 +912,37 @@
                 <span class="tag">Phytoremediation</span>
                 <span class="tag">Environmental Justice</span>
               </div>
+              <div class="project-note"><strong>Unexpectedly cool:</strong> some plants are remarkably effective little water-treatment systems.</div>
             </div>
           </article>
 
-          <article class="project">
+          <article class="project" data-accent="gold">
             <div class="project-image">
               <img src="assets/bison-daniels.jpg" alt="Bison and prairie habitat at Daniels Park">
             </div>
             <div class="project-copy">
               <span class="project-number">PROJECT 03</span>
-              <h3>Landscape Ecology and Restoration Planning</h3>
+              <h3>DIA Landscape Ecology StoryMap</h3>
               <p>
-                Used GIS, land-cover analysis, remote sensing, and ecological context to examine habitat connectivity, urban expansion, and restoration opportunities across Colorado landscapes.
-                Focused on making spatial analysis useful for conservation and planning.
+                Built an interactive ArcGIS StoryMap examining landscape change around Denver International Airport and Green Valley Ranch.
+                The project brings together land cover, NDVI, habitat connectivity, environmental justice, and the nearby Rocky Mountain Arsenal National Wildlife Refuge.
               </p>
               <div class="tags">
-                <span class="tag">ArcGIS Pro</span>
+                <span class="tag">ArcGIS StoryMaps</span>
                 <span class="tag">Remote Sensing</span>
                 <span class="tag">NDVI</span>
                 <span class="tag">Landscape Ecology</span>
               </div>
+              <div class="project-links">
+                <a class="project-link" href="https://storymaps.arcgis.com/stories/f62f7aff13b440508b47c9086484857e" target="_blank" rel="noopener noreferrer">
+                  🗺️ Open the StoryMap ↗
+                </a>
+              </div>
+              <div class="project-note"><strong>Small reality of GIS:</strong> I zoomed in, lost context, and zoomed back out more times than I could count.</div>
             </div>
           </article>
 
-          <article class="project">
+          <article class="project" data-accent="coral">
             <div class="project-image">
               <img src="assets/consumption-literacy.avif" alt="Community sustainability and garden work">
             </div>
@@ -859,6 +958,7 @@
                 <span class="tag">Environmental Education</span>
                 <span class="tag">Sustainability</span>
               </div>
+              <div class="project-note"><strong>General conclusion:</strong> tomatoes are weird.</div>
             </div>
           </article>
         </div>
@@ -929,13 +1029,13 @@
           <div>
             <span class="script">skills</span>
             <p class="eyebrow">Skills</p>
-            <h2>Technical skills, grouped by how I actually use them.</h2>
+            <h2>Technical skills I use across research, GIS, fieldwork, and environmental analysis.</h2>
           </div>
         </div>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-icon">01</div>
+            <div class="skill-icon">🗺️</div>
             <h3>GIS and Mapping</h3>
             <ul class="skill-list">
               <li>ArcGIS Pro</li>
@@ -947,7 +1047,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">02</div>
+            <div class="skill-icon">🐍</div>
             <h3>Programming and Data</h3>
             <ul class="skill-list">
               <li>Python</li>
@@ -959,7 +1059,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">03</div>
+            <div class="skill-icon">💧</div>
             <h3>Field and Water</h3>
             <ul class="skill-list">
               <li>Water-quality concepts</li>
@@ -971,7 +1071,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon">04</div>
+            <div class="skill-icon">🛰️</div>
             <h3>Remote Sensing</h3>
             <ul class="skill-list">
               <li>Landsat imagery</li>
@@ -985,32 +1085,32 @@
       </div>
     </section>
 
-    <section class="section gallery" aria-label="Environmental work gallery">
+    <section class="section outside" id="outside">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="script">gallery</span>
-            <p class="eyebrow">Gallery</p>
-            <h2>A few of the places behind the work.</h2>
-          </div>
-        </div>
+        <div class="outside-card">
+          <p class="eyebrow">Away from the computer</p>
+          <h2>A few things I do when I am not working on a project.</h2>
+          <p>
+            Although there is still a decent chance I brought my laptop.
+          </p>
 
-        <div class="gallery-grid">
-          <figure><img src="assets/hero.jpeg" alt="Brynley doing stream fieldwork"></figure>
-          <figure><img src="assets/BluemesaReservoir.jpg" alt="Blue Mesa Reservoir"></figure>
-          <figure><img src="assets/wetland.jpg" alt="Wetland landscape"></figure>
-          <figure><img src="assets/bison-daniels.jpg" alt="Bison in prairie habitat"></figure>
+          <div class="outside-list">
+            <div class="outside-item">🌱 Volunteering in community gardens</div>
+            <div class="outside-item">🚗 Planning little road trips in my tiny green Fiat</div>
+            <div class="outside-item">🌿 Stopping to look at a plant and then needing to know what it is</div>
+            <div class="outside-item">☕ Finding somewhere to sit with coffee and, unfortunately, my laptop</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+<section class="section contact" id="contact">
       <div class="container contact-grid">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about maps, water, restoration, or the project you need help moving forward.</h2>
+          <h2>Thanks for making it this far.</h2>
           <p>
-            I am open to environmental science, GIS, restoration, field research, and water-resource opportunities.
+            I would love to hear about environmental science, GIS, restoration, field research, or water-resource work, including the oddly specific projects that need someone willing to dig in.
           </p>
         </div>
 
