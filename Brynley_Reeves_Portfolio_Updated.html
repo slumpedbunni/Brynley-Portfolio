@@ -34,10 +34,10 @@
 
     .bgimg {
       min-height: 100%;
-      background-position: center;
+      background-position: center 28%;
       background-repeat: no-repeat;
       background-size: cover;
-      background-image: linear-gradient(180deg, rgba(13,43,35,.08), rgba(13,43,35,.50)), url('assets/profile-placeholder.svg');
+      background-image: linear-gradient(180deg, rgba(13,43,35,.08), rgba(13,43,35,.50)), url('assets/brynley.jpeg');
       position: relative;
     }
     .bgimg::after {
@@ -91,7 +91,8 @@
 
     .project-card { height: 100%; border-radius: 22px; overflow: hidden; background: white; border: 1px solid rgba(23,63,53,.08); box-shadow: 0 12px 35px rgba(23,63,53,.08); transition: transform .25s ease, box-shadow .25s ease; }
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 22px 45px rgba(23,63,53,.15); }
-    .project-card img { width: 100%; height: 235px; object-fit: cover; background: var(--mist); }
+    .project-card img { width: 100%; height: 250px; object-fit: cover; object-position: center; background: var(--mist); transition: transform .35s ease; }
+    .project-card:hover img { transform: scale(1.025); }
     .project-card h3 { margin-top: 0; font-size: 1.45rem; }
     .tag { display: inline-block; margin: 4px 5px 0 0; padding: 7px 11px; border-radius: 999px; background: var(--mist); color: var(--pine); font-size: .75rem; font-weight: 700; }
 
@@ -155,8 +156,8 @@
     <header class="w3-container w3-center" style="padding:120px 16px 96px" id="home">
       <p class="eyebrow">Environmental Science • GIS • Restoration</p>
       <h1 class="hero-title"><b>Brynley Reeves</b></h1>
-      <p class="hero-subtitle">Environmental scientist who enjoys turning ecological and hydrologic data into practical, understandable solutions. My experience spans GIS, Python, water-resource modeling, field research, remote sensing, and restoration planning—and I am especially drawn to work that connects strong science with real conservation needs.</p>
-      <img src="assets/profile-placeholder.svg" alt="Placeholder for a professional photo of Brynley Reeves" class="w3-image w3-hide-large w3-round w3-margin-top" style="display:block;width:68%;max-width:460px;margin-left:auto;margin-right:auto">
+      <p class="hero-subtitle">Environmental scientist turning ecological and hydrologic data into practical, understandable solutions. My experience spans GIS, Python, water-resource modeling, field research, remote sensing, and restoration planning—and I am especially drawn to work that connects strong science with real conservation needs.</p>
+      <img src="assets/brynley.jpeg" alt="Portrait of Brynley Reeves" class="w3-image w3-hide-large w3-margin-top" style="display:block;width:72%;max-width:430px;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:28px;margin-left:auto;margin-right:auto;box-shadow:0 18px 45px rgba(23,63,53,.18)">
       <a href="Brynley_Reeves_Resume.docx" download class="w3-button btn-primary w3-margin-top">
         <i class="fa fa-download"></i> Download Resume
       </a>
@@ -171,7 +172,7 @@
       <div class="w3-row-padding" style="margin:24px -16px 0">
         <div class="w3-half w3-margin-bottom">
           <article class="w3-card project-card">
-            <img src="assets/reservoir-model.png" alt="Map or figure from the Colorado reservoir storage modeling project">
+            <img src="assets/BluemesaReservoir.jpg" alt="Map or figure from the Colorado reservoir storage modeling project">
             <div class="w3-container w3-padding-24">
               <h3>Colorado Reservoir Storage Modeling</h3>
               <p class="w3-small w3-text-grey">ESIIL STARS Research Internship • CU Boulder • 2026</p>
@@ -183,7 +184,7 @@
 
         <div class="w3-half w3-margin-bottom">
           <article class="w3-card project-card">
-            <img src="assets/wetland.svg" alt="Illustration representing a constructed treatment wetland">
+            <img src="assets/wetland.jpg" alt="South Platte treatment wetland project image">
             <div class="w3-container w3-padding-24">
               <h3>South Platte Treatment Wetland</h3>
               <p class="w3-small w3-text-grey">MSU Denver • 2025</p>
@@ -197,7 +198,7 @@
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="w3-half w3-margin-bottom">
           <article class="w3-card project-card">
-            <img src="assets/prairie.svg" alt="Illustration representing prairie restoration and erosion control">
+            <img src="assets/bison-daniels.jpg" alt="Bison and prairie habitat at Daniels Park">
             <div class="w3-container w3-padding-24">
               <h3>Daniels Park Prairie Restoration</h3>
               <p class="w3-small w3-text-grey">MSU Denver + Denver Zoo • 2025</p>
@@ -209,7 +210,7 @@
 
         <div class="w3-half w3-margin-bottom">
           <article class="w3-card project-card">
-            <img src="assets/community.svg" alt="Illustration representing community gardening and sustainability education">
+            <img src="assets/consumption-literacy.avif" alt="Consumption Literacy Project community sustainability work">
             <div class="w3-container w3-padding-24">
               <h3>Community Sustainability Outreach</h3>
               <p class="w3-small w3-text-grey">Consumption Literacy Project • 2023</p>
